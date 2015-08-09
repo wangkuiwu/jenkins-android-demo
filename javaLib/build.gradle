@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+// maven仓库
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    // 指定"源码路径"和"资源路径"
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+
+    // 指定test的"源码路径"
+    test {
+        java {
+            srcDir 'test'
+        }
+    }
+}
+
+dependencies {
+    // 测试依赖于maven仓库中的junit包
+    testCompile 'junit:junit:4.+'
+}
